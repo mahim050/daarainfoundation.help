@@ -4,37 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daarain Foundation – Animal Rescue & Shelter</title>
-  <meta name="description" content="Daarain Foundation is an animal rescue and shelter dedicated to rescuing, rehabilitating, and rehoming abandoned and injured animals in Jamshedpur, India." />
+  <meta name="description" content="Daarain Foundation is a nonprofit animal rescue and shelter organization saving, healing, and rehoming animals in need." />
   <link rel="icon" href="/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta property="og:title" content="Daarain Foundation" />
-  <meta property="og:description" content="A nonprofit animal rescue and shelter organization serving with compassion." />
-  <meta property="og:image" content="/logo.png" />
-  <meta property="og:url" content="https://daarainfoundation.help" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Daarain Foundation",
-    "url": "https://daarainfoundation.help",
-    "email": ["mahimvpn70@gmail.com", "superan@daarainfoundation.help"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "H. No. 18A, Road No. 13, Zakir Nagar East, Near Eidgah Maidan, Post: Azadnagar, Mango",
-      "addressLocality": "Jamshedpur",
-      "addressRegion": "Jharkhand",
-      "postalCode": "831001",
-      "addressCountry": "IN"
-    },
-    "logo": "https://daarainfoundation.help/logo.png"
-  }
-  </script>
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; }
     .shadow-soft { box-shadow: 0 10px 25px rgba(2,132,199,0.08); }
+    #previewModal { display: none; }
+    #previewModal.active { display: flex; animation: fadeIn 0.35s ease-in-out; }
+    @keyframes fadeIn { from {opacity:0; transform:scale(0.95);} to {opacity:1; transform:scale(1);} }
   </style>
 </head>
 
@@ -54,7 +34,6 @@
       <a href="#about" class="hover:text-sky-600">About</a>
       <a href="#numbers" class="hover:text-sky-600">Stats</a>
       <a href="#services" class="hover:text-sky-600">Services</a>
-      <a href="#adopt" class="hover:text-sky-600">Adopt</a>
       <a href="#gallery" class="hover:text-sky-600">Gallery</a>
       <a href="#ads" class="hover:text-sky-600">Ad Preview</a>
       <a href="#contact" class="hover:text-sky-600">Contact</a>
@@ -71,61 +50,96 @@
     <p class="mt-4 max-w-2xl">We rescue, rehabilitate, and rehome animals in need — giving every creature a chance to heal and thrive.</p>
     <div class="mt-6 flex gap-3">
       <a href="#donate" class="px-6 py-3 bg-sky-600 rounded-lg font-semibold hover:bg-sky-700">Donate Now</a>
-      <a href="#adopt" class="px-6 py-3 bg-white/90 text-slate-900 rounded-lg font-semibold hover:bg-white">Adopt</a>
+      <a href="#ads" class="px-6 py-3 bg-white/90 text-slate-900 rounded-lg font-semibold hover:bg-white">Preview Ads</a>
     </div>
   </div>
 </section>
 
 <!-- About -->
-<section id="about" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-4 text-center">
+<section id="about" class="py-20 bg-white text-center">
+  <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-black mb-4">About Us</h2>
     <p class="text-slate-600 leading-relaxed text-lg max-w-3xl mx-auto">
-      Daarain Foundation is a nonprofit animal welfare organization that rescues and rehabilitates abandoned animals in India.
-      We provide emergency treatment, shelter, and a second chance for countless dogs, cats, and birds. Our mission is to inspire compassion,
-      promote responsible pet care, and create a community where every life matters.
+      Daarain Foundation is a nonprofit animal welfare organization that rescues, rehabilitates, and rehomes abandoned and injured animals.
+      Our volunteers, veterinarians, and supporters help build a world where every animal receives love, care, and respect.
     </p>
   </div>
 </section>
 
+<!-- Stats -->
+<section id="numbers" class="py-20 bg-slate-50 text-center">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-black mb-10">By the Numbers</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+        <div class="text-3xl font-extrabold text-sky-600">1,280</div><div class="text-sm text-slate-600">Dogs adopted</div>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-soft">
+        <div class="text-3xl font-extrabold text-sky-600">1,045</div><div class="text-sm text-slate-600">Cats adopted</div>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-soft">
+        <div class="text-3xl font-extrabold text-sky-600">320</div><div class="text-sm text-slate-600">Birds rescued</div>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-soft">
+        <div class="text-3xl font-extrabold text-sky-600">86</div><div class="text-sm text-slate-600">Animals in care (today)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-20 bg-white text-center">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-black mb-10">What We Do</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+        <img src="https://images.unsplash.com/photo-1537130508299-46ab547b2f06?q=80&w=1200&auto=format&fit=crop" class="h-40 w-full object-cover rounded-xl">
+        <h3 class="mt-4 font-semibold text-lg">Rescue & Intake</h3>
+        <p class="mt-2 text-slate-600">Emergency rescue and safe shelter for abandoned animals.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?q=80&w=1200&auto=format&fit=crop" class="h-40 w-full object-cover rounded-xl">
+        <h3 class="mt-4 font-semibold text-lg">Medical Treatment</h3>
+        <p class="mt-2 text-slate-600">Vaccinations, surgeries, and rehabilitation by trusted vets.</p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft">
+        <img src="https://images.unsplash.com/photo-1558944351-cd18b33aa36f?q=80&w=1200&auto=format&fit=crop" class="h-40 w-full object-cover rounded-xl">
+        <h3 class="mt-4 font-semibold text-lg">Adoption</h3>
+        <p class="mt-2 text-slate-600">Finding forever homes for loving rescued animals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Gallery -->
-<section id="gallery" class="py-20 bg-slate-50">
-  <div class="max-w-7xl mx-auto px-4 text-center">
+<section id="gallery" class="py-20 bg-slate-50 text-center">
+  <div class="max-w-7xl mx-auto px-4">
     <h2 class="text-3xl md:text-4xl font-black mb-10">In Action</h2>
     <div class="grid md:grid-cols-3 gap-4">
-      <img src="https://images.unsplash.com/photo-1508675801634-7d3c95a6d2ae?q=80&w=1200&auto=format&fit=crop" class="rounded-xl h-56 w-full object-cover" alt="Rescue">
-      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop" class="rounded-xl h-56 w-full object-cover" alt="Animal care">
-      <img src="https://images.unsplash.com/photo-1601758124499-09a0b7b92c26?q=80&w=1200&auto=format&fit=crop" class="rounded-xl h-56 w-full object-cover" alt="Volunteers">
+      <img src="https://images.unsplash.com/photo-1508675801634-7d3c95a6d2ae?q=80&w=1200&auto=format&fit=crop" class="rounded-xl h-56 w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop" class="rounded-xl h-56 w-full object-cover">
+      <img src="https://images.unsplash.com/photo-1601758124499-09a0b7b92c26?q=80&w=1200&auto=format&fit=crop" class="rounded-xl h-56 w-full object-cover">
     </div>
   </div>
 </section>
 
 <!-- Ad Preview -->
-<section id="ads" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-black mb-6">Awareness Campaigns & Ad Previews</h2>
-    <p class="text-slate-600 max-w-3xl mx-auto mb-10">We regularly create awareness campaigns to educate and inspire compassion for street animals and adoption drives. Here's a preview of some recent ads.</p>
+<section id="ads" class="py-20 bg-white text-center">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-black mb-6">Ad Preview & Awareness Campaigns</h2>
+    <p class="text-slate-600 max-w-3xl mx-auto mb-10">See our latest awareness campaigns promoting compassion and adoption.</p>
     <div class="grid md:grid-cols-3 gap-6">
       <div class="rounded-2xl border border-slate-200 bg-slate-50 shadow-soft overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?q=80&w=1200&auto=format&fit=crop" alt="Adopt Don't Shop" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="font-semibold text-lg">Adopt, Don’t Shop</h3>
-          <p class="text-slate-600 mt-2">Encouraging families to adopt rescue animals instead of buying pets. Join our monthly adoption camp.</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1525253086316-d0c936c814f8?q=80&w=1200&auto=format&fit=crop" class="w-full h-48 object-cover">
+        <div class="p-6"><h3 class="font-semibold text-lg">Adopt, Don’t Shop</h3><p class="text-slate-600 mt-2">Join our adoption drive and give animals a second chance.</p></div>
       </div>
       <div class="rounded-2xl border border-slate-200 bg-slate-50 shadow-soft overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1508675801634-7d3c95a6d2ae?q=80&w=1200&auto=format&fit=crop" alt="Street Animal Help" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="font-semibold text-lg">Street Animal Helpline</h3>
-          <p class="text-slate-600 mt-2">Call us anytime to report injured or abandoned animals in your neighborhood. Every call saves a life.</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1508675801634-7d3c95a6d2ae?q=80&w=1200&auto=format&fit=crop" class="w-full h-48 object-cover">
+        <div class="p-6"><h3 class="font-semibold text-lg">Street Animal Help</h3><p class="text-slate-600 mt-2">24/7 helpline for injured and homeless animals.</p></div>
       </div>
       <div class="rounded-2xl border border-slate-200 bg-slate-50 shadow-soft overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?q=80&w=1200&auto=format&fit=crop" alt="Feed a Friend" class="w-full h-48 object-cover">
-        <div class="p-6">
-          <h3 class="font-semibold text-lg">Feed a Friend</h3>
-          <p class="text-slate-600 mt-2">Our “Feed a Friend” program encourages communities to sponsor meals for shelter animals.</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1535930749574-1399327ce78f?q=80&w=1200&auto=format&fit=crop" class="w-full h-48 object-cover">
+        <div class="p-6"><h3 class="font-semibold text-lg">Feed a Friend</h3><p class="text-slate-600 mt-2">Sponsor meals for shelter and stray animals.</p></div>
       </div>
     </div>
   </div>
@@ -135,7 +149,7 @@
 <section id="donate" class="py-20 bg-sky-600 text-white text-center">
   <div class="max-w-5xl mx-auto px-4">
     <h2 class="text-3xl font-bold mb-4">Support Our Mission</h2>
-    <p class="mb-8">Your generosity fuels our rescue operations and medical care for animals in distress.</p>
+    <p class="mb-8">Your generosity helps fund food, shelter, and medical aid for rescued animals.</p>
     <a href="mailto:superan@daarainfoundation.help" class="bg-white text-sky-700 font-semibold px-6 py-3 rounded-lg hover:bg-slate-100">Contact Us to Donate</a>
   </div>
 </section>
@@ -164,10 +178,20 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer class="border-t border-slate-200 py-6 text-center text-sm text-slate-600">
   © <span id="y"></span> Daarain Foundation – Animal Rescue & Shelter. All rights reserved.
 </footer>
+
+<!-- Floating Preview Button -->
+<button onclick="openPreview()" class="fixed bottom-6 right-6 bg-sky-600 text-white p-4 rounded-full shadow-lg hover:bg-sky-700 text-lg">🔍 Preview</button>
+
+<!-- Live Preview Modal -->
+<div id="previewModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm items-center justify-center p-6 z-[9999] hidden">
+  <div class="bg-white rounded-2xl w-full max-w-5xl h-[85vh] shadow-xl overflow-hidden relative">
+    <button onclick="closePreview()" class="absolute top-3 right-3 bg-slate-900 text-white px-3 py-1 rounded-full text-sm hover:bg-slate-700">✕</button>
+    <iframe src="about:blank" id="previewFrame" class="w-full h-full border-none"></iframe>
+  </div>
+</div>
 
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
@@ -176,9 +200,19 @@
     const e=document.getElementById('email').value.trim();
     const m=document.getElementById('message').value.trim();
     const subject=encodeURIComponent('Message from '+n);
-    const body=encodeURIComponent(m+'\\n\\nFrom: '+n+' <'+e+'>');
+    const body=encodeURIComponent(m+'\n\nFrom: '+n+' <'+e+'>');
     window.location.href='mailto:superan@daarainfoundation.help?subject='+subject+'&body='+body;
     document.getElementById('formStatus').classList.remove('hidden');
+  }
+  function openPreview(){
+    const modal=document.getElementById('previewModal');
+    const frame=document.getElementById('previewFrame');
+    frame.src=window.location.href;
+    modal.classList.add('active');
+  }
+  function closePreview(){
+    document.getElementById('previewModal').classList.remove('active');
+    document.getElementById('previewFrame').src='about:blank';
   }
 </script>
 </body>
